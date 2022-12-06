@@ -24,7 +24,16 @@
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+
+                {% if user.socialaccount_set.all.0.get_avater_url %}
+                  <img class="rounded-circle" width="25px" src="{{user.socialaccount_set.all.0.get_avatar_url }}"
+                       alt="">
+                {% else %}
+                  <img class="rounded-circle" src="https://source.boringavatars.com/beam/40/{self.author.email}">
+                {% endif %}
+                &nbsp;
                 {{ user.username }}
+
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="/accounts/logout/">Log Out</a>

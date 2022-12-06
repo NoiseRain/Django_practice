@@ -4,6 +4,7 @@ from markdownx.models import MarkdownxField
 import os
 from markdownx.utils import markdown
 
+
 class Tag(models.Model) :
     name = models.CharField(max_length=50, unique=True)
 
@@ -80,3 +81,9 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return f'{self.post.get_absolute_url()}#comment-{self.pk}'
+
+    def get_avatar_url(self):
+        if self.author.socialaccount_set.exists():
+            return self.author.socialaccount_set.first().get_avatar_url()
+        else:
+            return 'https://source.boringavatars.com/beam/40/{self.author.email}'
