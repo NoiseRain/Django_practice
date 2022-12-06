@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from bs4 import BeautifulSoup
 from django.contrib.auth.models import User
-from .models import Post, Category, Tag
+from .models import Post, Category, Tag, Comment
 
 class TestView(TestCase) :
     def setUp(self) :
@@ -26,24 +26,31 @@ class TestView(TestCase) :
 
         self.post_001 = Post.objects.create(
             title='첫 번째 포스트입니다.',
-            content='하하하하히히히히히',
+            content='도전은 머뭇거리지 말고 ',
             category=self.category_programming,
             author=self.user_trump
         )
         self.post_001.tags.add(self.tag_hello)
         self.post_002 = Post.objects.create(
             title='두 번째 포스트입니다.',
-            content='후후후후후햐햐햐햐햐',
+            content='실패는 다시 시작하라는 시그널이고',
             category=self.category_music,
             author=self.user_obama
         )
         self.post_003 = Post.objects.create(
             title='세 번째 포스트입니다.',
-            content='카테고리가 없을 수도~',
+            content='뒤늦은 순간이란 결코 존재하지 않는다구요',
             author=self.user_obama
         )
         self.post_003.tags.add(self.tag_python_kor)
         self.post_003.tags.add(self.tag_python)
+
+        self.comment_001 = Comment.objects.create(
+            post = self.post_001,
+            author = self.user_obama,
+            content ='첫번째 댓글입니다.'
+        )
+
 
     def test_update_post(self):
         update_post_url = f'/blog/update_post/{self.post_003.pk}/'
@@ -263,3 +270,10 @@ class TestView(TestCase) :
         self.assertIn(self.tag_hello.name, post_area.text)
         self.assertNotIn(self.tag_python.name, post_area.text)
         self.assertNotIn(self.tag_python_kor.name, post_area.text)
+
+        #comment area
+        comments_area = soup.find('div', id='comment_area')
+        comment_001_area = comments_area.find('div', id='comment-1')
+        self.assertIn(self.comment_001.author.username, comment_001_area.text)
+        self.assertIn(self.comment_001.content, comment_001_area.text)
+
