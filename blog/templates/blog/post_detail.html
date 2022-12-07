@@ -76,11 +76,11 @@
                                 <form id="comment-form" method="POST" action="{{ post.get_absolute_url }}new_comment/">
                                     {% csrf_token %}
                                     {{ comment_form | crispy }}
-                                    <button type="submit" class="btn btn-primary mb-5">Submit</button>
+                                    <button type="submit" style="board-style:solid rgb(203,203,203); border-color : gray; color:gray; background-color:white"  class="btn btn-primary mb-5">답글달기</button>
 
                                 </form>
                                 {% else %}
-                                <a role="button" class="btn btn-outline-dark btn-block btn-sm my-3" href="#" data-toggle="modal" data-target="#loginModal">Log in and leave a comment</a>
+                                <a role="button" class="btn btn-outline-dark btn-block btn-sm my-3" href="#" data-toggle="modal" data-target="#loginModal">로그인 하신 뒤 답글을 적어주세요</a>
                                 {% endif %}
                                 <!-- Single comment-->
                                 {% if post.comment_set.exists %}
@@ -112,7 +112,7 @@
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="deleteModalLabel">Are You Sure?</h5>
+                                                        <h5 class="modal-title" id="deleteModalLabel">정말 지워요?</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -121,8 +121,8 @@
                                                         <del>{{ comment | linebreaks }}</del>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                        <a role="button" class="btn btn-danger" href="/blog/delete_comment/{{ comment.pk }}/">Delete</a>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">안 지울래요</button>
+                                                        <a role="button" class="btn btn-danger" href="/blog/delete_comment/{{ comment.pk }}/">지워요</a>
                                                     </div>
                                                 </div>
                                             </div>
