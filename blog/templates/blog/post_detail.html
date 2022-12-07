@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block main_area %}
+<div class="disign" style="font-family: 'GangwonEdu_OTFBoldA';">
                     <div id="post-area">
                       {% if post.category %}
                       <span class="badge badge-secondary float-right">{{ post.category }}</span>
@@ -33,9 +34,6 @@
                                 </a>
                             {% endif %}
 
-                            <!-- Post categories-->
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
                         </header>
                         <!-- Preview image figure-->
                         <figure class="mb-4">
@@ -144,5 +142,5 @@
                         </div>
                     </section>
                     </div>
-
+</div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
         {% block main_area %}
-
+<div class="disign" style="font-family: 'GangwonEdu_OTFBoldA';">
         {% if user.is_authenticated %}
             {% if user.is_superuser or user.is_staff %}
                 <a class="btn btn-info btn-sm float-right" href="/blog/create_post/" role="button">
@@ -14,7 +14,7 @@
           <h1>Blog
               {% if search_info %}<small class="text-muted">{{ search_info }}</small>{% endif %}
               {% if category %}<span class="badge badge-secondary">{{ category }}</span>{% endif %}
-              {% if tag %}<span class="badge badge-light"><i class="fa-solid fa-tags"></i>{{ tag }} ({{ tag.post_set.count }})</span>{% endif %}
+              {% if tag %}<span class="badge badge-light"><i class="fa-solid fa-tags"></i>&nbsp;{{ tag }} ({{ tag.post_set.count }})</span>{% endif %}
           </h1>
 
 
@@ -83,4 +83,5 @@
 
           </ul>
           {% endif %}
+</div>
         {% endblock %}

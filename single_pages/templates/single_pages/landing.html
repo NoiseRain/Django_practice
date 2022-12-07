@@ -10,30 +10,43 @@
     <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
     <link rel="stylesheet" href="{% static 'single_pages/css/landing.css'%}" media="screen">
     <script src="https://kit.fontawesome.com/c8e2b99a17.js" crossorigin="anonymous"></script>
+    <style>
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+    </style>
 </head>
 
 
-<body>
+<body style="font-family: 'GangwonEdu_OTFBoldA';" >
     {%include 'blog/navbar.html' %}
 
     <section>
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-lg-6"  style="text-align:center">
+                <div class="col-lg-6"  style="text-align:center; font-family: 'GangwonEdu_OTFBoldA';">
                     <h1 class="mt-5" > 야간서재 </h1>
                     <br/>
-                    <div class="text_field" style="font-size: 12px;">
+                    <div class="text_field"">
                     <p> 우리 사이에 남겨진 말들이 지나치게 문학적이라고 생각해 </p>
-                        <br/>
-                    <p> 김이강, 「마르고 파란」 中</p>
+                    <p>김이강, 「마르고 파란」 中</p>
+                        <br/><br/>
+                        <hr/>
+                        <br/><br/>
+                        <p>페이지가 쓸데없이 서정적인 이유는...</p>
+                        <p>무언가 만들어보고 싶었지만 만들지 못했기 때문이다. </p>
+
                     </div>
                 </div>
-                <div class="col-lg-5 mt-5">
-                    <h2>Blog - Recent posts </h2>
+                <div class="col-lg-5 mt-5"">
+                    <h4 style="text-align:center"> 빠른 소식 </h4>
                     {% for post in recent_posts %}
                     <div class="card mt-1">
                         <div class="card-body">
-                            <h6> <a href="{{ post.get_absoulte_url }}"
+                            <h6> <a href="{{ post.get_absolute_url }}"
                                     class="text-decoration-none text-dark"> {{post.title}}</a></h6>
                             <span class="badge badge-pill badge-light float-right">
                                   <img class="mr-1 rounded-circle" src="https://source.boringavatars.com/beam/20/{self.author.email}">
