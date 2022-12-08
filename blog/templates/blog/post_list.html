@@ -4,8 +4,8 @@
 <div class="disign" style="font-family: 'GangwonEdu_OTFBoldA';">
         {% if user.is_authenticated %}
             {% if user.is_superuser or user.is_staff %}
-                <a class="btn btn-info btn-sm float-right" href="/blog/create_post/" role="button">
-                    <i class="fas fa-pen"></i>&nbsp;&nbsp;New Post
+                <a class="btn btn-info btn-sm float-right" href="/blog/create_post/" role="button" style="background-color:transparent; color:gray; border-color : transparent">
+                    <i class="fas fa-pen"></i>&nbsp;&nbsp;새로운 글쓰기
                 </a>
             {% endif %}
         {% endif %}
@@ -25,7 +25,7 @@
               {% if p.head_image %}
                 <img class="card-img-top" src="{{ p.head_image.url }}" alt="{{ p }}" />
               {% else %}
-                <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image" />
+                <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/150" alt="random_image" />
               {% endif %}
               <div class="card-body">
                   {% if p.category %}
