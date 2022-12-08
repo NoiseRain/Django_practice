@@ -36,12 +36,11 @@
                     <p class="lead" >
                         <br/>
                         이렇게 대충 만든 홈페이지가 나를 소개한다니 부끄럽습니다.<br/>
-                        왜 때문에 이미지가 아래로 내려갔는지.. col-lg-7 의미가 없는지.. 오타겠지..<br/>
-                        푸터도.. 올라왔네... 뜻대로 되는 것이 없다,, 나중에 다시 검토하겠습니다..
+                        푸터가.. 국희 투두리스트를 밟고 있네... ,, 나중에 다시 검토하겠습니다..
                     </p>
                     <hr/>
                     <ul>
-                        <li> 사회경험 </li>
+                        <li> 인생사 </li>
                         <ul>
                             <li> 인생 ( ~ 2022.12.ing) </li>
                         </ul>
@@ -72,7 +71,7 @@
                 </div>
                   <br/>
                 <div class="col-lg-4">
-                    <img class="img-fluid" src="{%static 'single_pages/images/camp.png'%}" style="width:300px">
+                    <img class="img-fluid" src="{%static 'single_pages/images/4.gif'%}" style="width:300px">
                 </div>
             </div>
         </div>
@@ -125,7 +124,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="chicken_stock" tabindex="-1" role="dialog" aria-labelledby="chicken_stockModalLabel" aria-hidden="true">
+<div style="margin-bottom:10px" class="modal fade" id="chicken_stock" tabindex="-1" role="dialog" aria-labelledby="chicken_stockModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -134,12 +133,14 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+
+
+            <div class="modal-body" class="container">
                 <div class="row">
-                    <div class="col-lg-7">
-                        <img class="img-fluid" src="{% static 'single_pages/images/1.png' %}">
+                    <div class="col-lg-6">
+                        <img class="img-fluid" src="{% static 'single_pages/images/1.png'%}">
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-6" style="text-align:center; margin-top:50px">
                         <p>요리 재료 아닙니다. <br/> 메신저입니다. <br/>  끓는 물에 넣지 말기. </p>
                         <a href="https://js-projects-bee-1121.netlify.app/chickentalk/chicken.html">
                             <button type="button" class="btn btn-light"><i class="fa-solid fa-kiwi-bird"></i>&nbsp;&nbsp;구경하기 </button>
@@ -147,12 +148,14 @@
                     </div>
                 </div>
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="modal fade" id="gookhi" tabindex="-1" role="dialog" aria-labelledby="gookhiModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -163,12 +166,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" class="container">
                 <div class="row">
-                    <div class="col-lg-7">
+                    <div class="col-lg-6">
                         <img class="img-fluid" src="{% static 'single_pages/images/2.png' %}">
                     </div>
-                    <div class="col-lg-5">
+                  <div class="col-lg-6" style="text-align:center; margin-top:50px">
                         <p> 한숨 쉬기 금지 <br/> 머리 감싸기 금지 <br/>  포기 금지</p>
                         <a href="https://js-projects-bee-1121.netlify.app/todolist/todolist.html">
                             <button type="button" class="btn btn-light"><i class="fa-solid fa-kiwi-bird"></i>&nbsp;&nbsp;구경하기 </button>
@@ -193,12 +196,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" class="container">
                 <div class="row">
-                    <div class="col-lg-7">
+                    <div class="col-lg-6">
                         <img class="img-fluid" src="{% static 'single_pages/images/3.png' %}">
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-6" style="text-align:center; margin-top:50px">
                         <p>제가 만약... <br/>  어느 날 수업에 나오지 않는다면요...</p>
                             <a href="https://js-projects-bee-1121.netlify.app/lotto/lotto.html">
                             <button type="button" class="btn btn-light"><i class="fa-solid fa-kiwi-bird"></i>&nbsp;&nbsp;구경하기 </button>
@@ -213,15 +216,15 @@
     </div>
 </div>
 
-    <div class="fixed-bottom">
-    {% include 'blog/footer.html' %}
-    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 
-
+<div class="fixed-bottom" style="margin-top:10px">
+    {% include 'blog/footer.html' %}
+    </div>
 </body>
 </html>
