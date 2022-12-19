@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "@dicebear/avatars": "^4.10.5",
+    "@dicebear/avatars": "^4.10.7",
+    "@dicebear/big-ears": "^4.10.7",
     "@dicebear/croodles-neutral": "^4.10.5"
   }
 }
