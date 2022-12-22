@@ -1,2 +1,1 @@
-# do_it_django_a_to_z
-Do it Django project by yoono
+현재 https 작업중 (서버 막음) 
